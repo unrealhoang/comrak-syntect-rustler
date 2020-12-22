@@ -16,9 +16,28 @@ defmodule ComrakSyntect.Native.ExtensionOptions do
   ]
 end
 
+defmodule ComrakSyntect.Native.ParseOptions do
+  defstruct [
+    smart: false,
+    default_info_string: nil,
+  ]
+end
+
+defmodule ComrakSyntect.Native.RenderOptions do
+  defstruct [
+    hardbreaks: false,
+    github_pre_lang: false,
+    width: 0,
+    unsafe_: false,
+    escape: false
+  ]
+end
+
 defmodule ComrakSyntect.Native.Options do
   defstruct [
-    extension: %ComrakSyntect.Native.ExtensionOptions{}
+    extension: %ComrakSyntect.Native.ExtensionOptions{},
+    parse: %ComrakSyntect.Native.ParseOptions{},
+    render: %ComrakSyntect.Native.RenderOptions{},
   ]
 end
 
